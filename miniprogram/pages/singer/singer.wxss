@@ -1,0 +1,15 @@
+
+.singer-category {
+    padding: 20rpx;
+}
+.singer-category .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx;
+    margin-top: -1px;
+    border: 1px solid #d9d9d9;
+}
+.singer-category .mb {
+    margin-bottom: 40rpx;
+}

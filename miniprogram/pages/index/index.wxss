@@ -1,0 +1,78 @@
+.banner {
+  width: 100%;
+  height: 330rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+.index-playlist .title {
+  position: relative;
+  margin: 28rpx 0;
+  line-height: 30rpx;
+}
+.index-playlist .title navigator {
+  display: inline-block;
+}
+.index-playlist .title .text {
+  position: relative;
+  display: inline-block;
+  padding-left: 8rpx;
+  font-size: 36rpx;
+}
+.index-playlist .title .text:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: 4rpx;
+  height: 32rpx;
+  background-color: #e4002b;
+}
+.index-playlist .title .icon-right_ {
+  vertical-align: -6rpx;
+}
+.index-playlist .list {
+  overflow: hidden;
+}
+.index-playlist .item {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 10rpx;
+  padding-right: 6rpx;
+  box-sizing: border-box;
+}
+.index-playlist .item:nth-child(3n) {
+  padding-right: 0;
+}
+.index-playlist .pic {
+  position: relative;
+  height: 234rpx;
+}
+.index-playlist image {
+  width: 100%;
+  height: 100%;
+}
+.index-playlist .count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-size: 24rpx;
+  height: 30rpx;
+}
+.index-playlist .icon-earphonee {
+  font-size: 28rpx;
+}
+.index-playlist .name {
+  overflow: hidden;
+  height: 60rpx;
+  padding: 4rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.album {
+  margin-top: 40rpx;
+}

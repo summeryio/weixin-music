@@ -1,0 +1,12 @@
+<wxs src="../util/tools.wxs" module="tools"></wxs>
+
+<template name="song-list">
+    <view id="song_list">
+        <block wx:for="{{songList}}" wx:key="id">
+            <navigator class="item">
+                <view class="name t-hide">{{item.name}}{{item.alia}}</view>
+                <view class="info">{{tools.returnArtistList(item)}} - {{item.name}} </view>
+            </navigator>
+        </block>
+    </view>
+</template>

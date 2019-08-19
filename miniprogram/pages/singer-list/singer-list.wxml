@@ -1,0 +1,17 @@
+<import src="/common/page/loading.wxml" />
+<wxs src="../../common/util/tools.wxs" module="tools"></wxs>
+
+<view id="singer_list">
+    <view class="list">
+        <block wx:for="{{singerList}}" wx:key="id">
+            <navigator url="" class="item">
+                <image class="img" src="{{item.picUrl}}?param=200y200" />
+                <text class="name">{{item.name}}</text>
+                <icon class="iconfont icon-right" />
+            </navigator>
+        </block>
+    </view>
+    <block wx:if="{{finished === true}}">
+        <template is="loading"></template>
+    </block>
+</view>

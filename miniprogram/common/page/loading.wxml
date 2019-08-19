@@ -1,0 +1,6 @@
+<template name="loading">
+    <view id="loading">
+        <image src="/common/img/loading.gif" class="icon" />
+        加载中
+    </view>
+</template>

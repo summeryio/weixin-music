@@ -1,0 +1,23 @@
+<import src="/common/page/loading.wxml" />
+<import src="/common/page/song-list.wxml" />
+<wxs src="../../common/util/tools.wxs" module="tools"></wxs>
+
+<view id="playlist_detail">
+    <block wx:if="{{loaded === true}}">
+        <view class="header">
+            <view class="bg" style="background-image: url({{playlist.coverImgUrl}}?param=400y400);"></view>
+            <view class="cont">
+                <view class="pic"><image src="{{playlist.coverImgUrl}}?param=400y400" /></view>
+                <view class="info">
+                    <text>{{playlist.name}}</text>
+                    <text>{{playlist.creator.nickname}}</text>
+                    <text>创建时间：{{tools.formatDateYMD(playlist.createTime)}}</text>
+                </view>
+            </view>
+        </view>
+        <template is="song-list" data="{{songList: playlist.tracks}}"></template>
+    </block>
+    <block wx:else>
+        <template is="loading"></template>
+    </block>
+</view>

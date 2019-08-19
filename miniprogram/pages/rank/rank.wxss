@@ -1,0 +1,17 @@
+
+.rank-list {}
+.rank-list .item {
+    display: flex;
+    align-items: center;
+    padding: 15rpx 0;
+    margin: 0 15rpx;
+    border-bottom: 1px solid #d9d9d9;
+}
+.rank-list .img {
+    width: 200rpx;
+    height: 200rpx;
+}
+.rank-list .name {
+    flex: 1;
+    padding-left: 20rpx;
+}

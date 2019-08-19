@@ -1,0 +1,29 @@
+
+function returnArtistList(song) {
+    var res = ''
+
+    for (var i = 0; i < song.ar.length; i ++) {
+        res += song.ar[i].name + (i === song.ar.length - 1 ? '' : '/')
+    }
+
+    return res
+}
+
+function formatPlayCount(count) {
+    return count > 100000 ? parseInt(count / 10000) + '万' : parseInt(count)
+}
+
+function formatDateYMD(timestamp) {
+    var nowDate = getDate(timestamp)
+    var year = nowDate.getFullYear()
+    var month = nowDate.getMonth() + 1 > 9 ? nowDate.getMonth() + 1 : '0' + (nowDate.getMonth() + 1)
+    var day = nowDate.getDate() > 9 ? nowDate.getDate() : '0' + nowDate.getDate()
+
+    return year + '-' + month + '-' + day
+}
+
+module.exports = {
+    returnArtistList: returnArtistList,
+    formatPlayCount: formatPlayCount,
+    formatDateYMD: formatDateYMD
+}

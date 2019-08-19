@@ -1,0 +1,20 @@
+<wxs module="m1">
+    function mdClass(key) {
+        var mb = (key === 5001 || key === 1003 || key === 2003 ||  key === 6003 ||  key === 7003 ||  key === 4003) ? 'mb' : ''
+
+        return mb
+    }
+
+    module.exports.mdClass = mdClass
+</wxs>
+
+<view id="singer">
+    <view class="singer-category">
+        <block wx:for="{{singerList}}" wx:key="key">
+            <navigator url="/pages/singer-list/singer-list?id={{item.key}}" class="item {{m1.mdClass(item.key)}}">
+                <text class="name">{{item.val}}</text>
+                <icon class="iconfont icon-right_" />
+            </navigator>
+        </block>
+    </view>
+</view>

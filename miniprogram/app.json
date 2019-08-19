@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/playlist/playlist",
+    "pages/singer-list/singer-list",
+    "pages/playlist-detail/playlist-detail",
+    "pages/album-detail/album-detail",
+    "pages/singer/singer",
+    "pages/rank/rank",
+    "pages/new/new",
+    "pages/album/album"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#e4002b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "common/img/recommend.png",
+        "selectedIconPath": "common/img/recommend_active.png"
+      },
+      {
+        "pagePath": "pages/new/new",
+        "text": "新歌",
+        "iconPath": "common/img/new.png",
+        "selectedIconPath": "common/img/new_active.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行榜",
+        "iconPath": "common/img/rank.png",
+        "selectedIconPath": "common/img/rank_active.png"
+      },
+      {
+        "pagePath": "pages/singer/singer",
+        "text": "歌手",
+        "iconPath": "common/img/singer.png",
+        "selectedIconPath": "common/img/singer_active.png"
+      }
+    ]
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

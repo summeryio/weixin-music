@@ -1,0 +1,23 @@
+<import src="/common/page/loading.wxml" />
+<import src="/common/page/song-list.wxml" />
+<wxs src="../../common/util/tools.wxs" module="tools"></wxs>
+
+<view id="album_detail">
+    <block wx:if="{{loaded === true}}">
+        <view class="header">
+            <view class="bg" style="background-image: url({{album.picUrl}}?param=400y400);"></view>
+            <view class="cont">
+                <view class="pic"><image src="{{album.picUrl}}?param=400y400" /></view>
+                <view class="info">
+                    <text>{{album.name}}</text>
+                    <text>创建时间：{{tools.formatDateYMD(album.publishTime)}}</text>
+                    <text>发行公司：{{album.company}}</text>
+                </view>
+            </view>
+        </view>
+        <template is="song-list" data="{{songList: songs}}"></template>
+    </block>
+    <block wx:else>
+        <template is="loading"></template>
+    </block>
+</view>
