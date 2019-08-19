@@ -1,0 +1,30 @@
+.song-list {
+    margin: 0 20rpx;
+}
+.song-list .item {
+    padding: 20rpx 0;
+
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 1rpx solid rgba(0, 0, 0, 0.05);
+}
+.song-list .intro {
+    width: 69%;
+}
+.song-list .name {
+    line-height: 1.5;
+    font-size: 36rpx;
+}
+.song-list .info {
+    color: #888;
+}
+.song-list .pic,
+.song-list .pic image {
+    width: 213rpx;
+    height: 213rpx;
+}

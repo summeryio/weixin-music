@@ -1,70 +1,65 @@
 <import src="/common/page/loading.wxml" />
 <wxs src="../../common/util/tools.wxs" module="tools"></wxs>
 
+<skeleton wx:if="{{showSkeleton}}"></skeleton>
 
-<view id="index">
-    <block wx:if="{{loaded === true}}">
-        <swiper
-            class="banner"
-            indicator-dots="{{bannerOption.indicatorDots}}"
-            autoplay="{{bannerOption.autoplay}}"
-            interval="{{bannerOption.interval}}"
-            duration="{{bannerOption.duration}}"
-            indicator-active-color="#e9203d"
-            circular="true"
+<view id="index" class="skeleton">
+    <swiper
+        class="banner skeleton-rect"
+        indicator-dots="{{bannerOption.indicatorDots}}"
+        autoplay="{{bannerOption.autoplay}}"
+        interval="{{bannerOption.interval}}"
+        duration="{{bannerOption.duration}}"
+        indicator-active-color="#e9203d"
+        circular="true"
 
-            current="{{bannerOption.current}}"
-            bindanimationfinish="changeGoodsSwip"
-        >
-            <block wx:for="{{bannerOption.banners}}" wx:key="{{targetId}}">
-                <swiper-item>
-                    <image src="{{item.imageUrl}}?param=1024y400" class="slide-image" />
-                </swiper-item>
+        current="{{bannerOption.current}}"
+        bindanimationfinish="changeGoodsSwip"
+    >
+        <block wx:for="{{bannerOption.banners}}" wx:key="{{targetId}}">
+            <swiper-item>
+                <image src="{{item.imageUrl}}?param=1024y400" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="index-playlist">
+        <view class="title">
+            <navigator url="/pages/playlist/playlist" class="skeleton-rect">
+                <text class="text">推荐歌单</text>
+                <icon class="iconfont icon-right_"></icon>
+            </navigator>
+        </view>
+        <view class="list">
+            <block wx:for="{{playList}}" wx:key="{{id}}">
+                <view class="item skeleton-rect">
+                    <navigator url="/pages/playlist-detail/playlist-detail?id={{item.id}}" class="pic">
+                        <image src="{{item.picUrl}}?param=400y400" />
+                        <view class="count">
+                            <icon class="iconfont icon-earphonee"></icon>
+                            {{tools.formatPlayCount(item.playCount)}}
+                        </view>
+                    </navigator>
+                    <navigator url="" class="name">{{item.name}}</navigator>
+                </view>
             </block>
-        </swiper>
-        <view class="index-playlist">
-            <view class="title">
-                <navigator url="/pages/playlist/playlist">
-                    <text class="text">推荐歌单</text>
-                    <icon class="iconfont icon-right_"></icon>
-                </navigator>
-            </view>
-            <view class="list">
-                <block wx:for="{{playList}}" wx:key="{{id}}">
-                    <view class="item">
-                        <navigator url="/pages/playlist-detail/playlist-detail?id={{item.id}}" class="pic">
-                            <image src="{{item.picUrl}}?param=400y400" />
-                            <view class="count">
-                                <icon class="iconfont icon-earphonee"></icon>
-                                {{tools.formatPlayCount(item.playCount)}}
-                            </view>
-                        </navigator>
-                        <navigator url="" class="name">{{item.name}}</navigator>
-                    </view>
-                </block>
-            </view>
         </view>
-        <view class="index-playlist album">
-            <view class="title">
-                <navigator url="/pages/album/album">
-                    <text class="text">新碟上架</text>
-                    <icon class="iconfont icon-right_"></icon>
-                </navigator>
-            </view>
-            <view class="list">
-                <block wx:for="{{albums}}" wx:key="{{id}}">
-                    <view class="item">
-                        <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="pic">
-                            <image src="{{item.picUrl}}?param=400y400" />
-                        </navigator>
-                        <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="name">{{item.name}}</navigator>
-                    </view>
-                </block>
-            </view>
+    </view>
+    <view class="index-playlist album">
+        <view class="title">
+            <navigator url="/pages/album/album" class="skeleton-rect">
+                <text class="text">新碟上架</text>
+                <icon class="iconfont icon-right_"></icon>
+            </navigator>
         </view>
-    </block>
-    <block wx:else>
-        <template is="loading"></template>
-    </block>
-    
+        <view class="list">
+            <block wx:for="{{albums}}" wx:key="{{id}}">
+                <view class="item albumItem-{{index}} skeleton-rect">
+                    <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="pic">
+                        <image src="{{lazyStatus[index] ? item.picUrl+'?param=400y400' : 'http://www.lfw66.com/tpl/cf_wap2019/images/img_default.svg'}}" class="lazy-img" />
+                    </navigator>
+                    <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="name">{{item.name}}</navigator>
+                </view>
+            </block>
+        </view>
+    </view>
 </view>

@@ -5,7 +5,7 @@
     <view class="list">
         <view wx:for="{{playlist}}" wx:key="id" class="item item-{{index}}">
             <navigator url="/pages/playlist-detail/playlist-detail?id={{item.id}}">
-                <image src="{{statusArr[index] ? item.coverImgUrl+'?param=400y400' : 'http://www.lfw66.com/tpl/cf_wap2019/images/img_default.svg'}}" class="img" />
+                <image src="{{statusArr[index] ? item.coverImgUrl+'?param=400y400' : 'http://www.lfw66.com/tpl/cf_wap2019/images/img_default.svg'}}" class="img lazy-img" />
                 <view class="desc">{{item.name}}</view>
             </navigator>
         </view>

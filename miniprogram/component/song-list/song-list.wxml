@@ -1,0 +1,15 @@
+<wxs src="../../common/util/tools.wxs" module="tools"></wxs>
+
+<view class="song-list">
+    <block wx:for="{{songList}}" wx:key="id">
+        <navigator class="item">
+            <view class="intro">
+                <view class="name t-hide">{{item.name}}{{item.alia}}</view>
+                <view class="info">{{tools.returnArtistList(item)}} - {{item.al.name}} </view>
+            </view>
+            <view class="pic">
+                <image src="{{item.al.picUrl}}?param=400y400" />
+            </view>
+        </navigator>
+    </block>
+</view>

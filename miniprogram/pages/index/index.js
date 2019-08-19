@@ -2,6 +2,13 @@ import {get} from '../../common/util/util'
 
 const app = getApp()
 
+
+let listArr = []
+for (let i = 0; i < 9; i ++) {
+    listArr.push(i)
+}
+
+
 let bannerOption = {
     banners: [],
     indicatorDots: true,
@@ -16,9 +23,11 @@ let bannerOption = {
 Page({
     data: {
         bannerOption: bannerOption,
-        playList: [],
+        playList: listArr,
+        loaded: false,
+        showSkeleton: true,
         albums: [],
-        loaded: false
+        lazyStatus: []
     },
 
     onLoad: function () {
@@ -73,16 +82,34 @@ Page({
     getPlatlistData: function () {
         get('/personalized?limit=9').then(res => {
             this.setData({
-                playList: res.data.result
+                playList: res.data.result,
+                showSkeleton: false
             })
         })
     },
     
     getAlbumData: function () {
+        let arr = []
+        for (let i = 0; i < 9; i ++) {
+            arr.push(false)
+        }
+        
         get('/top/album?limit=9').then(res => {
             this.setData({
                 albums: res.data.albums
             })
+
+
+            for (let i in arr) {
+                wx.createIntersectionObserver().relativeToViewport({ bottom: 20 }).observe('.albumItem-' + i, (ret) => {
+                    if (ret.intersectionRatio > 0) {
+                        arr[i] = true
+                    }
+                    this.setData({
+                        lazyStatus: arr
+                    })
+                })
+            }
         })
     }
 })

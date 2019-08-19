@@ -14,7 +14,7 @@ Page({
     getSongList: function () {
         get('/playlist/detail?id=3779629').then(res => {
             res.data.playlist.tracks = res.data.playlist.tracks.filter((item, index) => {
-                return index < 50
+                return index < 20
             })
             
             this.setData({

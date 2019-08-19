@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "skeleton": "/component/skeleton/skeleton"
+  },
   "navigationBarTitleText": "网易云音乐"
 }
