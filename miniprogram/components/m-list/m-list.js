@@ -3,13 +3,13 @@ import {get} from '../../common/util/util'
 const app = getApp()
 
 let arr = []
-let pageSize = 20
+let pageSize = 10
 
 for (let i = 0; i < pageSize; i ++) {
     arr.push(false)
 }
 
-Page({
+Component({
     data: {
         playlist: [],
         nowPage: 1,
@@ -18,12 +18,16 @@ Page({
         arrHeight: [],
         itemHeight: 0
     },
+
+    methods: {
+    
     onLoad: function () {
         this.getPlaylist()
     },
     onReady: function () {
+        console.log(1111);
         setTimeout(() => {
-            this.getRect()
+            // this.getRect()
         }, 1000)
     },
 
@@ -40,6 +44,7 @@ Page({
         let _self = this
         
         return get(`/top/playlist?limit=${pageSize}&order=hot&cat=全部&offset=${(nowPage - 1) * pageSize}`).then(res => {
+            console.log(res);
             if (!res.data.more) {
                 this.setData({finished: false})
             }
@@ -52,11 +57,11 @@ Page({
                 _self.data.statusArr.push(false)
             }
 
-            this.getRect()
+            // this.getRect()
         })
     },
 
-    getRect: function () {
+    /* getRect: function () {
         let _self = this
 
         wx.createSelectorQuery().select('.item').boundingClientRect(function (rect) {
@@ -76,7 +81,7 @@ Page({
            this.data.arrHeight[i] = Math.floor(i / 2) * (itemHeight) 
         }
     },
-    onPageScroll: function (ev) { // 滚动改变图片是否显示
+    onPageScroll: function (ev) {
         for (let i = 0; i < this.data.arrHeight.length; i ++) {
             if (this.data.arrHeight[i] < ev.scrollTop + app.globalData.windowHeight) {
                 if (this.data.statusArr[i] === false) {
@@ -86,5 +91,7 @@ Page({
         }
 
         this.setData({statusArr: this.data.statusArr})
+    } */
+
     }
 })

@@ -4,7 +4,7 @@
     <view class="list">
         <block wx:for="{{albums}}" wx:key="id">
             <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="item">
-                <image src="{{item.picUrl}}?param=400y400" class="img" />
+                <image src="{{item.picUrl}}?param=400y400" class="img"  />
                 <view class="desc">{{item.name}}</view>
             </navigator>
         </block>

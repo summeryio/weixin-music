@@ -33,7 +33,7 @@ Page({
     getAlbum: function (override) {
         let {nowPage, finished, isFoot} = this.data
         
-        return get(`/top/album?offset=${(nowPage - 1) * 30}&limit=30`).then(res => {
+        return get(`/top/album?offset=${(nowPage - 1) * 20}&limit=20`).then(res => {
             this.setData({
                 albums: override ? res.data.albums : this.data.albums.concat(res.data.albums)
             })

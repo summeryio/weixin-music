@@ -3,7 +3,7 @@
 
 
 <view id="index">
-    <!-- <block wx:if="{{loaded === true}}"> -->
+    <block wx:if="{{loaded === true}}">
         <swiper
             class="banner"
             indicator-dots="{{bannerOption.indicatorDots}}"
@@ -62,9 +62,9 @@
                 </block>
             </view>
         </view>
-    <!-- </block>
+    </block>
     <block wx:else>
         <template is="loading"></template>
-    </block> -->
+    </block>
     
 </view>

@@ -1,7 +1,7 @@
-<import src="/common/page/loading.wxml" />
+<!-- <import src="/common/page/loading.wxml" /> -->
 
 
-<view id="playlist">
+<view class="m-list">
     <view class="list">
         <view wx:for="{{playlist}}" wx:key="id" class="item item-{{index}}">
             <navigator url="/pages/playlist-detail/playlist-detail?id={{item.id}}">
@@ -10,7 +10,7 @@
             </navigator>
         </view>
     </view>
-    <block wx:if="{{finished === true}}">
+    <!-- <block wx:if="{{finished === true}}">
         <template is="loading"></template>
-    </block>
+    </block> -->
 </view>
