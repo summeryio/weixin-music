@@ -2,7 +2,8 @@
 App({
     globalData: {
         windowHeight: 0,
-        windowWidth: 0
+        windowWidth: 0,
+        img_df: 'http://www.lfw66.com/tpl/cf_wap2019/images/img_default.svg'
     },
     onLaunch: function () {
         // console.log('小程序启动了');
@@ -21,6 +22,4 @@ App({
     onHide: function () {
         // console.log('小程序切入后台');
     },
-
-    
 })

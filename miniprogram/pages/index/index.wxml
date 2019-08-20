@@ -22,6 +22,7 @@
             </swiper-item>
         </block>
     </swiper>
+
     <view class="index-playlist">
         <view class="title">
             <navigator url="/pages/playlist/playlist" class="skeleton-rect">
@@ -44,6 +45,7 @@
             </block>
         </view>
     </view>
+    
     <view class="index-playlist album">
         <view class="title">
             <navigator url="/pages/album/album" class="skeleton-rect">

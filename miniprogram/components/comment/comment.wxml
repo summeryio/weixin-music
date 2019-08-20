@@ -1,0 +1,74 @@
+<import src="/common/page/loading.wxml" />
+<wxs src="../../common/util/tools.wxs" module="tools"></wxs>
+
+<block wx:if="{{pageId && comment.comments.length !== 0}}">
+    <view class="m-comment">
+        <view class="t">精彩评论</view>
+        <view class="list">
+            <block wx:for="{{comment.hotComments}}" wx:key="commentId">
+                <view class="item">
+                    <view class="pic">
+                        <image src="{{item.user.avatarUrl}}" />
+                    </view>
+                    <view class="intro">
+                        <view class="top">
+                            <navigator href="/" class="name">{{item.user.nickname}}</navigator>
+                            <text class="time">{{tools.formatDateYMD(item.time)}}</text>
+                            <view class="like">
+                                <text>{{item.likedCount}}赞</text>
+                                <icon class="iconfont icon-like"></icon>
+                            </view>
+                        </view>
+                        <block wx:if="{{item.beReplied[0].content}}">
+                            <div class="replied">
+                                <view class="self">
+                                    回复
+                                    <navigator href="/">@{{item.beReplied[0].user.nickname}}</navigator>：
+                                    {{item.content}}
+                                </view>
+                                <view class="to">@{{item.beReplied[0].user.nickname}}：{{item.beReplied[0].content}}</view>
+                            </div>
+                        </block>
+                        <block wx:else>
+                            <view class="cont">{{item.content}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+
+        <view class="t">最新评论</view>
+        <view class="list">
+            <block wx:for="{{comment.comments}}" wx:key="commentId">
+                <view class="item">
+                    <view class="pic">
+                        <image src="{{item.user.avatarUrl}}" />
+                    </view>
+                    <view class="intro">
+                        <view class="top">
+                            <navigator href="/" class="name">{{item.user.nickname}}</navigator>
+                            <text class="time">{{tools.formatDateYMD(item.time)}}</text>
+                            <view class="like">
+                                <text>{{item.likedCount}}赞</text>
+                                <icon class="iconfont icon-like"></icon>
+                            </view>
+                        </view>
+                        <block wx:if="{{item.beReplied[0].content}}">
+                            <div class="replied">
+                                <view class="self">
+                                    回复
+                                    <navigator href="/">@{{item.beReplied[0].user.nickname}}</navigator>：
+                                    {{item.content}}
+                                </view>
+                                <view class="to">@{{item.beReplied[0].user.nickname}}：{{item.beReplied[0].content}}</view>
+                            </div>
+                        </block>
+                        <block wx:else>
+                            <view class="cont">{{item.content}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>

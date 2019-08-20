@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/new/new",
     "pages/index/index",
+    "pages/playlist-detail/playlist-detail",
+    "pages/new/new",
     "pages/playlist/playlist",
     "pages/singer-list/singer-list",
-    "pages/playlist-detail/playlist-detail",
     "pages/album-detail/album-detail",
     "pages/singer/singer",
     "pages/rank/rank",

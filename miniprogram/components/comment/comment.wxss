@@ -1,0 +1,80 @@
+.m-comment .t {
+    padding: 0 10rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 24rpx;
+    color: #666;
+    background: rgba(0, 0, 0, 0.05); }
+  
+  .m-comment .item {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-align: start;
+            align-items: flex-start;
+    padding-top: 10rpx; }
+  
+  .m-comment .pic {
+    margin: 0 10rpx;
+    -webkit-box-flex: 0;
+            flex: none; }
+    .m-comment .pic image {
+      width: 60rpx;
+      height: 60rpx;
+      border-radius: 50%; }
+  
+  .m-comment .intro {
+    -webkit-box-flex: 1;
+            flex: auto;
+    padding: 0 20rpx 20rpx 0;
+    border-bottom: 0.02rem solid rgba(0, 0, 0, 0.1); }
+  
+  .m-comment .top {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+    .m-comment .top .name {
+      font-size: 28rpx;
+      color: #666;
+      line-height: 40rpx; }
+    .m-comment .top .time {
+      font-size: 24rpx;
+      color: #999; }
+    .m-comment .top .like {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #999;
+      font-size: 24rpx; }
+      .m-comment .top .like span {
+        vertical-align: -4rpx; }
+      .m-comment .top .like i {
+        font-size: 40rpx; }
+  
+  .m-comment .cont {
+      margin: 14rpx 0;
+    line-height: 1.5;
+    word-wrap:break-word;
+
+ }
+  
+  .m-comment .replied {
+    margin-top: 14rpx; }
+    .m-comment .replied .self navigator {
+        display: inline;
+      color: #507daf; }
+    .m-comment .replied .to {
+      margin: 10rpx 0;
+      padding: 10rpx;
+      color: #888;
+      font-size: 28rpx;
+      line-height: 1.5;
+      border: 1rpx solid rgba(0, 0, 0, 0.1); }

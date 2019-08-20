@@ -60,7 +60,7 @@ Component({
 					skeletonRectLists: res[0]
 				})
 
-				console.log(that.data);
+				// console.log(that.data);
 			});
 
 		},
@@ -68,12 +68,12 @@ Component({
 			const that = this;
 
 			wx.createSelectorQuery().selectAll(`.${this.data.selector} >>> .${this.data.selector}-radius`).boundingClientRect().exec(function(res){
-				console.log(res);
+				// console.log(res);
 				that.setData({
 					skeletonCircleLists: res[0]
 				})
 
-				console.log(that.data);
+				// console.log(that.data);
 			});
 		},
 

@@ -10,6 +10,7 @@ page {
     width: 100%;
 
     font-size: 32rpx;
+    background-color: #fcfcfd;
 }
 .t-hide {
     overflow: hidden;
@@ -21,29 +22,13 @@ page {
     color: #e4002b;
 }
 
-/* 歌曲列表 */
-#song_list {
-    margin: 0 20rpx;
-}
-#song_list .item {
-    padding: 20rpx 0;
-    border-bottom: 1rpx solid rgba(0,0,0,.05);
-}
-#song_list .name {
-    font-size: 36rpx;
-}
-#song_list .info {
-    /* font-size: 30rpx; */
-    color: #888;
-}
-
 /* loading */
-#loading {
+.loading {
     margin-top: 20rpx;
     text-align: center;
     color: #999;
 }
-#loading .icon {
+.loading .icon {
     width: 40rpx;
     height: 40rpx;
     vertical-align: top;

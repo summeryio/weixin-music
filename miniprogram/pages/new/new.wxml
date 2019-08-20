@@ -1,7 +1,10 @@
 <import src="/common/page/loading.wxml" />
-<import src="/common/page/song-list.wxml" />
-
 
 <view id="new">
-    <song-list songList="{{songList}}"></song-list>
+    <block wx:if="{{loaded === true}}">
+        <song-list songList="{{songList}}"></song-list>
+    </block>
+    <block wx:else>
+        <template is="loading"></template>
+    </block>
 </view>

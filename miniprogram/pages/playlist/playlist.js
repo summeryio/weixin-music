@@ -16,7 +16,8 @@ Page({
         finished: true,
         statusArr: arr,
         arrHeight: [],
-        itemHeight: 0
+        itemHeight: 0,
+        img_df: app.globalData.img_df
     },
     onLoad: function () {
         this.getPlaylist()
