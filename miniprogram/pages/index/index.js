@@ -64,9 +64,20 @@ Page({
         get('/banner').then(res => {
             res.data.banners = res.data.banners.filter(banner => {
                 let type = parseInt(banner.targetType)
-                
-                if (type === 1 || type === 10 || type === 1000) {
-                    return true
+
+                switch(type) {
+                    case 1:
+                        banner.url = `/pages/song-detail/song-detail?id=${banner.targetId}`
+                        return true
+                    break;
+                    case 10:
+                        banner.url = `/pages/album-detail/album-detail?id=${banner.targetId}`
+                        return true
+                    break;
+                    case 1000:
+                        banner.url = `/pages/playlist-detail/playlist-detail?id=${banner.targetId}`
+                        return true
+                    break;
                 }
             })
 

@@ -7,6 +7,10 @@ Component({
 		pageId: {
 			type: Number,
 			value: null
+		},
+		cat: {
+			type: String,
+			value: null
 		}
 	},
 	data: {
@@ -14,11 +18,11 @@ Component({
 	},
 	
 	ready: function () {
-		this.getData(this.properties.pageId)
+		this.getData(this.properties.pageId, this.properties.cat)
 	},
 	methods: {
-		getData: function (id) {
-			get(`/comment/playlist?id=${id}`).then(res => {
+		getData: function (id, cat) {
+			get(`/comment/${cat}?id=${id}`).then(res => {
 				if (res.data.code === 200) {
 					this.setData({
 						comment: res.data

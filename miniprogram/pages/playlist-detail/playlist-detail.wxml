@@ -1,5 +1,4 @@
 <import src="/common/page/loading.wxml" />
-<import src="/common/page/song-list.wxml" />
 <wxs src="../../common/util/tools.wxs" module="tools"></wxs>
 
 <view id="playlist_detail">
@@ -16,9 +15,10 @@
     </view>
     <block wx:if="{{loaded === true}}">
         <song-list songList="{{playlist.tracks}}"></song-list>
+        <comment pageId="{{pageId}}" cat="playlist"></comment>
     </block>
     <block wx:else>
         <template is="loading"></template>
     </block>
-    <comment pageId="{{pageId}}"></comment>
+    
 </view>

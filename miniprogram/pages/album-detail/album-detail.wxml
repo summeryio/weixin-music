@@ -1,21 +1,21 @@
 <import src="/common/page/loading.wxml" />
-<import src="/common/page/song-list.wxml" />
 <wxs src="../../common/util/tools.wxs" module="tools"></wxs>
 
 <view id="album_detail">
-    <block wx:if="{{loaded === true}}">
-        <view class="header">
-            <view class="bg" style="background-image: url({{album.picUrl}}?param=400y400);"></view>
-            <view class="cont">
-                <view class="pic"><image src="{{album.picUrl}}?param=400y400" /></view>
-                <view class="info">
-                    <text>{{album.name}}</text>
-                    <text>创建时间：{{tools.formatDateYMD(album.publishTime)}}</text>
-                    <text>发行公司：{{album.company}}</text>
-                </view>
+    <view class="header">
+        <view class="bg" style="background-image: url({{album.picUrl}}?param=400y400);"></view>
+        <view class="cont">
+            <view class="pic"><image class="lazy-img" src="{{album.picUrl ? album.picUrl + '?param=400y400' : img_df}}" /></view>
+            <view class="info">
+                <text>{{album.name}}</text>
+                <text>创建时间：{{tools.formatDateYMD(album.publishTime)}}</text>
+                <text>发行公司：{{album.company}}</text>
             </view>
         </view>
-        <template is="song-list" data="{{songList: songs}}"></template>
+    </view>
+    <block wx:if="{{loaded === true}}">
+        <song-list songList="{{songs}}"></song-list>
+        <comment pageId="{{pageId}}" cat="album"></comment>
     </block>
     <block wx:else>
         <template is="loading"></template>

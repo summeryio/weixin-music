@@ -1,0 +1,20 @@
+<import src="/common/page/loading.wxml" />
+<wxs src="../../common/util/tools.wxs" module="tools"></wxs>
+
+<view id="song_detail">
+    <view class="header">
+        <view class="bg" style="background-image: url({{song.picUrl}}?param=400y400);"></view>
+        <view class="cont">
+            <view class="pic"><image class="lazy-img" src="{{song.picUrl ? song.picUrl + '?param=400y400' : img_df}}" /></view>
+            <view class="info">
+                <text>{{song.name}}</text>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{loaded === true}}">
+            <comment pageId="{{pageId}}" cat="music"></comment>
+    </block>
+    <block wx:else>
+        <template is="loading"></template>
+    </block>
+</view>

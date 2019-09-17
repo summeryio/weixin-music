@@ -3,5 +3,5 @@
     "song-list": "/components/song-list/song-list",
     "comment": "/components/comment/comment"
   },
-  "navigationBarTitleText": "专辑详情"
+  "navigationBarTitleText": "歌曲详情"
 }

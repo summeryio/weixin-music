@@ -1,0 +1,48 @@
+
+.header {
+    overflow: hidden;
+    position: relative;
+    padding: 90rpx 0;
+}
+.header .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    filter: blur(20px);
+    transform: scale(1.5);
+}
+.header .bg:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.25);
+}
+.header .cont {
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+}
+.header .pic {}
+.header .pic image {
+    width: 284rpx;
+    height: 284rpx;
+}
+.header .info {
+    padding-left: 20rpx;
+}
+.header .info text {
+    display: block;
+    line-height: 40rpx;
+    padding-bottom: 20rpx;
+    color: #fff;
+}

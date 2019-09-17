@@ -4,7 +4,7 @@
 
 <view class="song-list">
     <block wx:for="{{songList}}" wx:key="id">
-        <navigator class="item">
+        <navigator class="item" url="/pages/song-detail/song-detail?id={{item.id}}">
             <view class="intro">
                 <view class="name t-hide">{{item.name}}{{item.alia}}</view>
                 <view class="info">{{tools.returnArtistList(item)}} - {{item.al.name}} </view>

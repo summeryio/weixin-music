@@ -4,8 +4,7 @@ const app = getApp()
 
 Page({
     data: {
-        album: {},
-        songs: [],
+        song: {},
         loaded: false,
         img_df: app.globalData.img_df,
         pageId: null
@@ -19,10 +18,9 @@ Page({
     },
 
     getData: function (id) {
-        get(`/album?id=${id}`).then(res => {
+        get(`/song/detail?ids=${id}`).then(res => {
             this.setData({
-                album: res.data.album,
-                songs: res.data.songs,
+                song: res.data.songs[0].al,
                 loaded: true
             })
         })
