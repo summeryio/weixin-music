@@ -27,7 +27,8 @@ Page({
         loaded: false,
         showSkeleton: true,
         albums: [],
-        lazyStatus: []
+        lazyStatus: [],
+        img_df: app.globalData.img_df
     },
 
     onLoad: function () {
@@ -100,27 +101,16 @@ Page({
     },
     
     getAlbumData: function () {
-        let arr = []
-        for (let i = 0; i < 9; i ++) {
-            arr.push(false)
-        }
+        let _self = this
         
         get('/top/album?limit=9').then(res => {
             this.setData({
                 albums: res.data.albums
             })
 
-
-            for (let i in arr) {
-                wx.createIntersectionObserver().relativeToViewport({ bottom: 20 }).observe('.albumItem-' + i, (ret) => {
-                    if (ret.intersectionRatio > 0) {
-                        arr[i] = true
-                    }
-                    this.setData({
-                        lazyStatus: arr
-                    })
-                })
-            }
+            app.lazyLoadImg(9, () => {
+                _self.setData({lazyStatus: app.globalData.lazyStatus})
+            }, 'lazyAlbum')
         })
     }
 })

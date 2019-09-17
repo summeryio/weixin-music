@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/new/new",
     "pages/index/index",
     "pages/song-detail/song-detail",
     "pages/playlist-detail/playlist-detail",
-    "pages/new/new",
     "pages/playlist/playlist",
     "pages/singer-list/singer-list",
     "pages/album-detail/album-detail",

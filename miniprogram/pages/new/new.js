@@ -9,6 +9,8 @@ Page({
     },
     onLoad: function () {
         this.getSongList()
+
+        app.lazyLoadImg(10)
     },
 
     getSongList: function () {

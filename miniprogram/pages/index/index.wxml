@@ -57,15 +57,19 @@
                 <icon class="iconfont icon-right_"></icon>
             </navigator>
         </view>
-        <view class="list">
-            <block wx:for="{{albums}}" wx:key="{{id}}">
-                <view class="item albumItem-{{index}} skeleton-rect">
-                    <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="pic">
-                        <image src="{{lazyStatus[index] ? item.picUrl+'?param=400y400' : 'http://www.lfw66.com/tpl/cf_wap2019/images/img_default.svg'}}" class="lazy-img" />
-                    </navigator>
-                    <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="name">{{item.name}}</navigator>
-                </view>
-            </block>
-        </view>
+
+        <scroll-view scroll-y>
+            <view class="list">
+                <block wx:for="{{albums}}" wx:key="{{id}}">
+                    <view class="item lazyAlbum-{{index}} skeleton-rect">
+                        <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="pic">
+                            <image src="{{lazyStatus[index] ? item.picUrl+'?param=400y400' : img_df}}" />
+                        </navigator>
+                        <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="name">{{item.name}}</navigator>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+
     </view>
 </view>
