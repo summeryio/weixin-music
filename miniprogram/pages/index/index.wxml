@@ -19,9 +19,7 @@
         <block wx:for="{{bannerOption.banners}}" wx:key="{{targetId}}">
             <navigator url="{{item.url}}" hover-class="none">
             <swiper-item>
-                
-                    <image src="{{item.imageUrl}}?param=1024y400" class="slide-image" />
-                
+                <image src="{{item.imageUrl}}?param=1024y400" class="slide-image" />
             </swiper-item>
             </navigator>
         </block>

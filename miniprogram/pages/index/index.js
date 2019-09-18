@@ -46,6 +46,8 @@ Page({
     },
 
     changeGoodsSwip: function (detail) { // 解决滑动卡死问题
+        console.log(detail);
+        
         let {swiperError, goodsIndex, preIndex} = this.data.bannerOption
         
         if (detail.detail.source == "touch") {
