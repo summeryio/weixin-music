@@ -4,16 +4,15 @@
 
 <view class="song-list">
     <block wx:for="{{songList}}" wx:key="id">
-        <navigator class="item lazySongList-{{index}}" url="/pages/song-detail/song-detail?id={{item.id}}">
+        <navigator class="item" url="/pages/song-detail/song-detail?id={{item.id}}">
             <view class="intro">
                 <view class="name t-hide">{{item.name}}{{item.alia}}</view>
                 <view class="info">{{tools.returnArtistList(item)}} - {{item.al.name}} </view>
             </view>
             <view class="pic">
-                <!-- <image src="{{item.al.picUrl}}?param=400y400" /> -->
-                <image src="{{lazyStatus[index] ? item.al.picUrl+'?param=400y400' : img_df}}" />
+                <image src="{{item.al.picUrl}}?param=400y400" />
             </view>
         </navigator>
     </block>
-    
 </view>
+

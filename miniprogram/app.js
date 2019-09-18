@@ -32,8 +32,7 @@ App({
             arr.push(false)
         }
         
-        // let clsName = cls ? '.' + cls + '-' : '.lazyItem-'
-        let clsName = '.lazySongList-'
+        let clsName = cls ? '.' + cls + '-' : '.lazyItem-'
 
         for (let i in arr) {
             wx.createIntersectionObserver().relativeToViewport({ bottom: 20 }).observe(clsName + i, (ret) => {
@@ -43,7 +42,6 @@ App({
                 this.globalData.lazyStatus = arr
                 fn && fn()
             })
-
         }
     }
 })

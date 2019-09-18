@@ -5,12 +5,20 @@ const app = getApp()
 Page({
     data: {
         songList: [],
-        loaded: false
+        loaded: false,
+        lazyStatus: []
     },
+
+    onShow: function () {
+        if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 1
+            })
+        }
+    },
+    
     onLoad: function () {
         this.getSongList()
-
-        app.lazyLoadImg(10)
     },
 
     getSongList: function () {

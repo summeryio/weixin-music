@@ -1,6 +1,6 @@
 @import './common/styles/iconfont.wxss';
 
-image.lazy-img {
+image/* .lazy-img */ {
     background-color: #f6f7f9;
 }
 

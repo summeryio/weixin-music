@@ -6,21 +6,23 @@
   width: 100%;
   height: 100%;
 }
-.index-playlist .title {
+
+.index-title {
   position: relative;
+  left: 3%;
   margin: 28rpx 0;
   line-height: 30rpx;
 }
-.index-playlist .title navigator {
+.index-title navigator {
   display: inline-block;
 }
-.index-playlist .title .text {
+.index-title .text {
   position: relative;
   display: inline-block;
   padding-left: 8rpx;
   font-size: 36rpx;
 }
-.index-playlist .title .text:after {
+.index-title .text:after {
   content: " ";
   position: absolute;
   left: 0;
@@ -28,10 +30,11 @@
   height: 32rpx;
   background-color: #e4002b;
 }
-.index-playlist .title .icon-right_ {
+.index-title .icon-right_ {
   vertical-align: -6rpx;
 }
-.index-playlist .list {
+
+/* .index-playlist .list {
   overflow: hidden;
 }
 .index-playlist .item {
@@ -43,10 +46,25 @@
 .index-playlist .item:nth-child(3n) {
   margin-right: 0;
   width: calc((100% / 3));
+} */
+
+.index-playlist .list {
+  overflow: hidden;
+  padding: 0 2%;
 }
+.index-playlist .item {
+  float: left;
+  width: 48%;
+  margin: 0 1% 10rpx;
+}
+
+
 .index-playlist .pic {
   position: relative;
-  height: 234rpx;
+  /* height: 234rpx; */
+  height: 300rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
 }
 .index-playlist image {
   width: 100%;
@@ -54,11 +72,10 @@
 }
 .index-playlist .count {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -18rpx;
+  right: 10rpx;
   color: #fff;
   font-size: 24rpx;
-  height: 30rpx;
 }
 .index-playlist .icon-earphonee {
   font-size: 28rpx;
@@ -75,4 +92,36 @@
 }
 .album {
   margin-top: 40rpx;
+}
+
+
+
+.mv .item {
+  float: left;
+  width: calc((100% / 2) - 6rpx);
+  margin-bottom: 10rpx;
+  margin-right: 6rpx;
+}
+.mv .item:nth-child(2n) {
+  margin-right: 0;
+  width: calc((100% / 2));
+}
+.mv .pic {
+  display: block;
+  width: 100%;
+  height: 200rpx;
+}
+.mv .pic image {
+  width: 100%;
+  height: 100%;
+}
+.mv .name {
+  overflow: hidden;
+  height: 60rpx;
+  padding: 4rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

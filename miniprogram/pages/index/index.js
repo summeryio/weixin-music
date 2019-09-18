@@ -27,14 +27,22 @@ Page({
         loaded: false,
         showSkeleton: true,
         albums: [],
+        mvs: [],
         lazyStatus: [],
         img_df: app.globalData.img_df
+    },
+
+    onShow: function () { // 底部tab切换时，设置正确下标
+        if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 0
+            })
+        }
     },
 
     onLoad: function () {
         this.getBannerData()
         this.getPlatlistData()
-        this.getAlbumData()
     },
 
     changeGoodsSwip: function (detail) { // 解决滑动卡死问题
@@ -92,10 +100,13 @@ Page({
     },
 
     getPlatlistData: function () {
-        get('/personalized?limit=9').then(res => {
+        get('/personalized?limit=6').then(res => {
             this.setData({
                 playList: res.data.result,
                 showSkeleton: false
+            }, () => {
+                this.getAlbumData()
+                this.getMVData()
             })
         })
     },
@@ -103,14 +114,24 @@ Page({
     getAlbumData: function () {
         let _self = this
         
-        get('/top/album?limit=9').then(res => {
+        get('/top/album?limit=6').then(res => {
             this.setData({
                 albums: res.data.albums
             })
-
-            app.lazyLoadImg(9, () => {
-                _self.setData({lazyStatus: app.globalData.lazyStatus})
-            }, 'lazyAlbum')
+        })
+    },
+    
+    getMVData: function () {
+        let _self = this
+        
+        get('/top/mv?limit=6').then(res => {
+            this.setData({
+                mvs: res.data.data
+            }, () => {
+                app.lazyLoadImg(12, () => {
+                    _self.setData({lazyStatus: app.globalData.lazyStatus})
+                })
+            })
         })
     }
 })

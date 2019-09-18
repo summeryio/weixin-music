@@ -22,5 +22,13 @@ Page({
             {key: 4002, val: '其他女歌手'},
             {key: 4003, val: '其他组合/乐队'}
         ]
-    }
+    },
+
+    onShow: function () {
+        if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 3
+            })
+        }
+    },
 })
