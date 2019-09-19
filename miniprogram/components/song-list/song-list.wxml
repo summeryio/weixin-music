@@ -10,7 +10,7 @@
                 <view class="info">{{tools.returnArtistList(item)}} - {{item.al.name}} </view>
             </view>
             <view class="pic">
-                <image src="{{item.al.picUrl}}?param=400y400" />
+                <image src="{{item.al.picUrl}}?param=400y400" lazy-load />
             </view>
         </navigator>
     </block>

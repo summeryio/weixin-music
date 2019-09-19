@@ -70,15 +70,14 @@
 
     <view class="mv">
         <view class="index-title">
-            <navigator url="/pages/album/album">
+            <navigator hover-class="none">
                 <text class="text">最新MV</text>
-                <icon class="iconfont icon-right_"></icon>
             </navigator>
         </view>
 
         <view class="list">
             <block wx:for="{{mvs}}" wx:key="{{id}}">
-                <view class="item lazyItem-{{index + 9}}">
+                <view class="item lazyItem-{{index + 6}}">
                     <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="pic">
                         <image src="{{lazyStatus[index] ? item.cover+'?param=400y200' : img_df}}" />
                     </navigator>
