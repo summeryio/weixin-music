@@ -6,7 +6,7 @@
         <view class="rank-list">
             <block wx:for="{{rankList}}" wx:key="id">
                 <navigator url="/pages/playlist-detail/playlist-detail?id={{item.id}}" class="item">
-                    <image class="img" src="{{item.coverImgUrl}}" />
+                    <image class="img" src="{{item.coverImgUrl}}" lazy-load />
                     <text class="name">{{item.name}}</text>
                     <icon class="iconfont icon-right" />
                 </navigator>

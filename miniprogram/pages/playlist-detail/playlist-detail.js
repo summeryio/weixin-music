@@ -19,9 +19,7 @@ Page({
 
     getData: function (id) {
         get(`/playlist/detail?id=${id}`).then(res => {
-            wx.setNavigationBarTitle({
-                title: res.data.playlist.name
-            })
+            app.changeWXtitle(res.data.playlist.name)
             
             if (res.data.playlist.tracks.length > 20) {
                 res.data.playlist.tracks = res.data.playlist.tracks.filter((song, i) => {

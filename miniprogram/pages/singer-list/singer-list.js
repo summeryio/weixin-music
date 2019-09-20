@@ -7,7 +7,7 @@ Page({
         id: null,
         singerList: [],
         nowPage: 1,
-        finished: true
+        finished: false
     },
     onLoad: function (option) {
         console.log(option);
@@ -16,6 +16,8 @@ Page({
     },
 
     onReachBottom: function () {
+        if (this.data.finished) return
+        
         this.setData({
             nowPage: this.data.nowPage + 1
         });
@@ -38,7 +40,9 @@ Page({
         return get(`/artist/list?cat=${id}&offset=${(nowPage - 1) * 20}&limit=20`).then(res => {
             console.log(res);
             if (!res.data.more) {
-                this.setData({finished: false})
+                this.setData({finished: true})
+
+                return
             }
             this.setData({
                 singerList: override ? res.data.artists : singerList.concat(res.data.artists)

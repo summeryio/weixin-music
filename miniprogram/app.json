@@ -8,6 +8,7 @@
     "pages/singer-list/singer-list",
     "pages/album-detail/album-detail",
     "pages/singer/singer",
+    "pages/singer-detail/singer-detail",
     "pages/rank/rank",
     "pages/album/album"
   ],
@@ -20,7 +21,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "网易云音乐",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

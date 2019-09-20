@@ -25,6 +25,13 @@ App({
         // console.log('小程序切入后台');
     },
 
+    // 改变页面title
+    changeWXtitle: function (t) {
+        wx.setNavigationBarTitle({
+            title: t
+        })
+    },
+
     // 图片懒加载
     lazyLoadImg: function (number, fn, cls) {
         let arr = []

@@ -3,9 +3,9 @@
 
 <view id="song_detail">
     <view class="header">
-        <view class="bg" style="background-image: url({{song.picUrl}}?param=400y400);"></view>
+        <view class="bg" style="background-image: url({{song.al.picUrl}}?param=400y400);"></view>
         <view class="cont">
-            <view class="pic"><image class="lazy-img" src="{{song.picUrl ? song.picUrl + '?param=400y400' : img_df}}" /></view>
+            <view class="pic"><image class="lazy-img" src="{{song.al.picUrl ? song.al.picUrl + '?param=400y400' : img_df}}" /></view>
             <view class="info">
                 <text>{{song.name}}</text>
             </view>
