@@ -5,7 +5,7 @@
     <view class="list">
         <block wx:for="{{singerList}}" wx:key="id">
             <navigator url="/pages/singer-detail/singer-detail?id={{item.id}}" class="item">
-                <image class="img" src="{{item.picUrl}}?param=200y200" />
+                <image class="img" src="{{item.picUrl}}?param=200y200" lazy-load />
                 <text class="name">{{item.name}}</text>
                 <icon class="iconfont icon-right" />
             </navigator>

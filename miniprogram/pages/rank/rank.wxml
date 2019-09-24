@@ -2,6 +2,8 @@
 
 
 <view id="rank">
+    <navBar background='transparent'></navBar>
+
     <block wx:if="{{loaded === true}}">
         <view class="rank-list">
             <block wx:for="{{rankList}}" wx:key="id">

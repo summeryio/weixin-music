@@ -9,6 +9,7 @@
 </wxs>
 
 <view id="singer">
+    <navBar background='transparent'></navBar>
     <view class="singer-category">
         <block wx:for="{{singerList}}" wx:key="key">
             <navigator url="/pages/singer-list/singer-list?id={{item.key}}" class="item {{m1.mdClass(item.key)}}">

@@ -11,10 +11,6 @@ Page({
     },
     onLoad: function (options) {
         this.getData(options.id)
-
-        this.setData({
-            pageId: options.id
-        })
     },
 
     getData: function (id) {
@@ -30,8 +26,17 @@ Page({
             this.setData({
                 playlist: res.data.playlist,
                 loaded: true,
-                // pageId: id
+                pageId: id
             })
         })
     },
+
+    handlerGobackClick: function () {
+        app.navigationBack()
+    },
+    handlerGohomeClick: function () {
+        wx.switchTab({
+            url: '/pages/index/index'
+        })
+    }
 })

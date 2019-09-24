@@ -1,6 +1,8 @@
 <import src="/common/page/loading.wxml" />
 
 <view id="new">
+    <navBar background='transparent'></navBar>
+
     <block wx:if="{{loaded === true}}">
         <song-list songList="{{songList}}"></song-list>
     </block>

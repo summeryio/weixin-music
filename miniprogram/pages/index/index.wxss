@@ -124,3 +124,10 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+
+
+.lxy-nav-bar-search__input {
+  display: block;
+  flex: none;
+}

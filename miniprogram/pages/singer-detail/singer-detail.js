@@ -7,15 +7,10 @@ Page({
         artist: {},
         songs: [],
         loaded: false,
-        img_df: app.globalData.img_df,
-        pageId: null
+        img_df: app.globalData.img_df
     },
     onLoad: function (options) {
         this.getData(options.id)
-
-        this.setData({
-            pageId: options.id
-        })
     },
 
     getData: function (id) {

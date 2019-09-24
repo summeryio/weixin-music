@@ -1,4 +1,7 @@
 {
+  "usingComponents": {
+    "navBar": "/components/navBar/navBar"
+  },
   "enablePullDownRefresh": false,
   "navigationBarTitleText": "歌单列表"
 }

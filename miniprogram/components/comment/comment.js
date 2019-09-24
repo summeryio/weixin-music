@@ -14,7 +14,8 @@ Component({
 		}
 	},
 	data: {
-		comment: {}
+		comment: {},
+		loaded: false
 	},
 	
 	ready: function () {
@@ -25,7 +26,8 @@ Component({
 			get(`/comment/${cat}?id=${id}`).then(res => {
 				if (res.data.code === 200) {
 					this.setData({
-						comment: res.data
+						comment: res.data,
+						loaded: true
 					})
 				}
 			})

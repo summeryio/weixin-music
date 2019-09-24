@@ -1,7 +1,11 @@
 <import src="/common/page/loading.wxml" />
 <wxs src="../../common/util/tools.wxs" module="tools"></wxs>
 
+
+
 <view id="playlist_detail">
+    <navBar title='' background='transparent' back="{{true}}" bindback="handlerGobackClick"></navBar>
+
     <view class="header">
         <view class="bg" style="background-image: url({{playlist.coverImgUrl}}?param=400y400);"></view>
         <view class="cont">
@@ -20,5 +24,6 @@
     <block wx:else>
         <template is="loading"></template>
     </block>
+    
     
 </view>

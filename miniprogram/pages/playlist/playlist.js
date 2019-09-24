@@ -87,5 +87,14 @@ Page({
         }
 
         this.setData({statusArr: this.data.statusArr})
+    },
+
+    handlerGobackClick: function () {
+        app.navigationBack()
+    },
+    handlerGohomeClick: function () {
+        wx.switchTab({
+            url: '/pages/index/index'
+        })
     }
 })

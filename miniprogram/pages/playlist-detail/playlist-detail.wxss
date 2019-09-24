@@ -3,6 +3,9 @@
     overflow: hidden;
     position: relative;
     padding: 90rpx 0;
+
+    margin-top: -200rpx;
+    padding-top: 200rpx;
 }
 .header .bg {
     position: absolute;

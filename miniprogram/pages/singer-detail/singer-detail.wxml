@@ -13,10 +13,8 @@
     </view>
     <block wx:if="{{loaded === true}}">
         <song-list songList="{{songs}}"></song-list>
-        <comment pageId="{{pageId}}" cat="playlist"></comment>
     </block>
     <block wx:else>
         <template is="loading"></template>
     </block>
-    
 </view>

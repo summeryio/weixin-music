@@ -4,6 +4,8 @@
 <skeleton wx:if="{{showSkeleton}}"></skeleton>
 
 <view id="index" class="skeleton">
+    <navBar background='#fff' searchBar="{{true}}" bindsearch='search' />
+
     <swiper
         class="banner skeleton-rect"
         indicator-dots="{{bannerOption.indicatorDots}}"
