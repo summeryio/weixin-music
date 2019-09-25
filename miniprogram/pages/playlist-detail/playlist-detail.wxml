@@ -4,15 +4,19 @@
 
 
 <view id="playlist_detail">
-    <navBar title='' background='transparent' back="{{true}}" bindback="handlerGobackClick"></navBar>
+    <navBar title="{{playlist.name}}" background="#fff" back="{{true}}" bindback="handlerGobackClick" home="{{true}}" bindhome="handlerGohomeClick"></navBar>
 
     <view class="header">
         <view class="bg" style="background-image: url({{playlist.coverImgUrl}}?param=400y400);"></view>
         <view class="cont">
             <view class="pic"><image class="lazy-img" src="{{playlist.coverImgUrl ? playlist.coverImgUrl + '?param=400y400' : img_df}}" /></view>
             <view class="info">
-                <text>{{playlist.name}}</text>
-                <text>{{playlist.creator.nickname}}</text>
+                <text class="title">{{playlist.name}}</text>
+                <view class="user">
+                    <image src="{{playlist.creator.avatarUrl + '?param=100y100'}}" />
+                    <text class="name">{{playlist.creator.nickname}}</text>
+                </view>
+                
                 <text>创建时间：{{playlist.createTime ? tools.formatDateYMD(playlist.createTime) : ''}}</text>
             </view>
         </view>

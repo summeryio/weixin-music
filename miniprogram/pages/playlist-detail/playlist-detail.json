@@ -1,8 +1,7 @@
 {
   "usingComponents": {
     "song-list": "/components/song-list/song-list",
-    "comment": "/components/comment/comment",
-    "navBar": "/components/navBar/navBar"
+    "comment": "/components/comment/comment"
   },
   "navigationBarTitleText": ""
 }

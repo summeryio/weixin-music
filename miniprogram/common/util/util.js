@@ -33,7 +33,7 @@ const post = (url,data) => {
   var promise = new Promise((resolve, reject) => {
     //网络请求
     wx.request({
-      url: 'http://192.168.0.110:3000' + url,
+      url: 'http://192.168.0.148:3001' + url,
       data: data,
       method: 'POST',
       header: { 
@@ -59,7 +59,7 @@ const get = (url, data) => {
   var promise = new Promise((resolve, reject) => {
     //网络请求
     wx.request({
-      url: 'http://192.168.0.110:3000' + url,
+      url: 'http://192.168.0.148:3001' + url,
       data: data,
       header: {
         'content-type': 'application/json',

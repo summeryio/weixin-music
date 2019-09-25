@@ -39,4 +39,8 @@ Page({
             })
         })
     },
+
+    handlerGobackClick: function () {
+        app.navigationBack()
+    }
 })

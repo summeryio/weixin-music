@@ -1,6 +1,8 @@
 <import src="/common/page/loading.wxml" />
 
 <view id="album">
+    <navBar title='新碟上架' background='#fff' back="{{true}}" bindback="handlerGobackClick"></navBar>
+    
     <view class="list">
         <block wx:for="{{albums}}" wx:key="id">
             <navigator url="/pages/album-detail/album-detail?id={{item.id}}" class="item">

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/search/search",
     "pages/playlist/playlist",
     "pages/new/new",
     "pages/song-detail/song-detail",
@@ -20,7 +21,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },

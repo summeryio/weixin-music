@@ -25,4 +25,13 @@ Page({
             })
         })
     },
+
+    handlerGobackClick: function () {
+        app.navigationBack()
+    },
+    handlerGohomeClick: function () {
+        wx.switchTab({
+            url: '/pages/index/index'
+        })
+    }
 })

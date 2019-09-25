@@ -2,8 +2,7 @@
 
 
 <view id="playlist">
-
-    <navBar title='歌单' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick"></navBar>
+    <navBar title='推荐歌单' background='#fff' back="{{true}}" bindback="handlerGobackClick"></navBar>
 
     <view class="list">
         <view wx:for="{{playlist}}" wx:key="id" class="item item-{{index}}">

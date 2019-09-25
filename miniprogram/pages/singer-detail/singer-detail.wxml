@@ -2,6 +2,8 @@
 <wxs src="../../common/util/tools.wxs" module="tools"></wxs>
 
 <view id="singer_detail">
+    <navBar title="{{artist.name}}" background="#fff" back="{{true}}" bindback="handlerGobackClick" home="{{true}}" bindhome="handlerGohomeClick"></navBar>
+    
     <view class="header">
         <view class="bg" style="background-image: url({{artist.picUrl}}?param=400y400);"></view>
         <view class="cont">

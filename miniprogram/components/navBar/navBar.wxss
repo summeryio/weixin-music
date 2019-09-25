@@ -89,7 +89,15 @@ page {
   align-items: center;
   justify-content: center;
   padding-left: 10px;
+  
 }
+
+.lxy-nav-bar__title, .lxy-nav-bar__center {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .lxy-nav-bar__inner .lxy-nav-bar__loading {
   font-size: 0;
 }

@@ -133,5 +133,11 @@ Page({
                 })
             })
         })
+    },
+
+    handleSearch: function () {
+        wx.navigateTo({
+            url: '/pages/search/search'
+        })
     }
 })

@@ -3,9 +3,6 @@
     overflow: hidden;
     position: relative;
     padding: 90rpx 0;
-
-    margin-top: -200rpx;
-    padding-top: 200rpx;
 }
 .header .bg {
     position: absolute;
@@ -41,11 +38,31 @@
     height: 284rpx;
 }
 .header .info {
-    padding-left: 20rpx;
+    margin-left: 20rpx;
 }
 .header .info text {
     display: block;
-    line-height: 40rpx;
-    padding-bottom: 20rpx;
     color: #fff;
+    line-height: 40rpx;
+}
+.header .info .title {
+    display: block;
+}
+.header .info .user {
+    display: flex;
+    margin: 20rpx 0;
+    align-items: center;
+}
+.header .info .name {
+    display: inline-block;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.header .info image {
+    display: inline-block;
+    width:  60rpx;
+    height: 60rpx;
+    border-radius: 100%;
 }

@@ -2,6 +2,8 @@
 <wxs src="../../common/util/tools.wxs" module="tools"></wxs>
 
 <view id="singer_list">
+    <navBar title='歌手列表' background='#fff' back="{{true}}" bindback="handlerGobackClick"></navBar>
+    
     <view class="list">
         <block wx:for="{{singerList}}" wx:key="id">
             <navigator url="/pages/singer-detail/singer-detail?id={{item.id}}" class="item">
