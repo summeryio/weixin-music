@@ -122,6 +122,7 @@ page {
     display: block;
     color: #666;
     font-size: 28rpx;
+    margin-top: 10rpx;
 }
 .playlist .list {
     overflow: hidden;

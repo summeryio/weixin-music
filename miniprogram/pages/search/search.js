@@ -10,11 +10,15 @@ Page({
         showResult: false,
         suggestList: [],
         inputValue: '',
-        result: {}
+        result: null
     },
 
     onLoad: function () {
         this.getHotKey()
+    },
+
+    handlerGobackClick: function () {
+        app.navigationBack()
     },
 
     getHotKey: function () { // 热门搜索
@@ -42,9 +46,19 @@ Page({
             })
         } else {
             this.setData({
-                showSuggest: false
+                showSuggest: false,
+                suggestList: []
             })
         }
+    },
+
+    clearInput: function () {
+        this.setData({
+            inputValue: '',
+            showSuggest: false,
+            showResult: false,
+            result: null
+        })
     },
     
     getSuggest: function () { // 搜索输入反馈

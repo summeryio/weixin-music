@@ -9,7 +9,7 @@
             <input focus='true' type="text" class="inp" placeholder="请输入歌手或歌曲名" value="{{inputValue}}"
                 bindinput="getInputKey"
             />
-            <icon class="iconfont icon-close"></icon>
+            <icon class="iconfont icon-close" bindtap="clearInput"></icon>
         </view>
     </view>
 
@@ -41,6 +41,8 @@
     </block>
 
     <block wx:else>
+        <template is="loading" wx:if="{{!result}}"></template>
+        
         <view class="search-result">
             <view class="{{result.artists || 'hide' }} article">
                 <view class="title">
@@ -48,7 +50,6 @@
                 </view>
                 <view class="cont">
                     <navigator url="" wx:for="{{result.artists}}" wx:key="id">
-                        <!-- <image src="{{item.picUrl}}?param=670y300" /> -->
                         <image src="{{item.picUrl}}?param=400y400" />
                         <text class="name">{{item.name}}</text>
                     </navigator>
