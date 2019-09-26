@@ -1,117 +1,147 @@
-@import "/common/styles/weui.wxss";
-
-
-/* pages/search/search.wxss */
 page {
-    background-color: #FBFCFE;
-    width:100%;
-    height: 100%;
-  }
-  .page__bd {
-    /* position: fixed;
-    top:0; */
-    width:100%;
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-align: center;
-    z-index:1;
-  }
-  .weui-search-bar {
-    width:100%;
-    background-color:#DC4238;
-    border: 1px  solid #DC4238;
-  }
-  .weui-search-bar__cancel-btn {
-    color:#ffffff;
-    font-size:28rpx;
-  }
-  .header_view_hide{
+    background-color: #fafafa;
+}
+.hide {
     display: none;
-  }
-  .hot_keys {
-    /* background: #fff; */
-    padding: 30rpx 30rpx 20rpx 30rpx;
-    /* display: block; */
-  }
-  .title {
-    color: #DE655C;
-    font-size: 30rpx;
-    font-weight: 800
-  }
-  .hot_key_box{
+}
+.search-box {
+    padding: 30rpx 40rpx 0;
+}
+.search-box .inner {
     display: flex;
-    flex-flow: row wrap;
-  }
-  .hot_keys_box_item{
-    font-size: 14px;
-    color: #DE655C;
-    background-color: #EDEEF0;
-    border-radius: 15rpx;
-    padding: 15rpx;
-    margin: 10rpx;
-  }
-  .weui-search-bar__label{
-    background-color:#DE655C; 
-    border-radius: 20rpx;
-  }
-  .weui-search-bar__text{
-    color: #EDA8A3;
-  }
-  .weui-search-bar__input{
-    background-color:#DE655C;
-    border-radius: 20rpx;
-    padding-left: 50rpx;
-    padding-right: 50rpx;
-  }
-  /* //改变光标和输入的子的颜色 */
-  input{
-    color:#ffffff;
-  }
-  .option{
-    margin: 0rpx 35rpx 0rpx 35rpx;
-    margin-top: 40rpx;
-    /* display: block; */
-    /*  */
-  }
-  .record{
-    position: absolute;
-    right: 0;
-    transform: translate(-80%,25%)
-  }
-  .search_suggest{
-    width:100%;
-    height:100%;
-  }
-  .search_result{
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70rpx;
+    border-radius: 30rpx;
+    background-color: #fff;
+}
+.search-box .inp {
+    width: 80%;
+    height: 70rpx;
+}
+.search-box icon {
     display: block;
-    font-size: 14px;
-    color: #000000;
-    /* background-color: #EDEEF0; */
-    /* border-radius: 15rpx; */
-    padding: 15rpx;
-    margin: 15rpx;
-    border-bottom: 1px solid #EDEEF0;
-  }
-  .search_result_songs{
+    vertical-align: -6rpx;
+    color: #666;
+    line-height: 70rpx;
+}
+
+.hot-search {
+    padding: 20rpx 40rpx;
+}
+.hot-search .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hot-search .title text {
+    font-size: 40rpx;
+}
+.hot-search icon {
+    color: #666;
+}
+.hot-search .list text {
+    display: inline-block;
+    margin: 20rpx 26rpx 0 0;
+    padding: 16rpx 30rpx;
+    border-radius: 30rpx;
+    background-color: #fff;
+    font-size: 28rpx;
+}
+
+/* 搜索反馈 */
+.suggest-list {
+    padding: 20rpx 40rpx;
+}
+.suggest-list .title {
+    color: #FB5050;
+}
+.suggest-list .item {
+    margin-top: 20rpx;
+}
+.suggest-list icon {
+    color: #666;
+    margin-right: 20rpx;
+}
+
+/* 搜索结果 */
+.search-result {
+    padding: 0 40rpx;
+}
+.search-result .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2;
+    margin-top: 40rpx;
+}
+.search-result .title text {
+    font-size: 30rpx;
+}
+.article .cont {
+    overflow: hidden;
+}
+.article .cont navigator {
+    /* display: block;
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    overflow: hidden; */
+    position: relative;
+    float: left;
+    width: 48%;
+    margin: 0 1% 10rpx;
+    height: 320rpx;
+}
+.article .name {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10rpx 20rpx;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .6);
+}
+.article image {
     width: 100%;
     height: 100%;
-  }
-  .search_result_song_item{
-     display: block;
-     /* background-color: #EDEEF0; */
-     /* border-radius: 15rpx; */
-     margin: 15rpx;
-     border-bottom: 1px solid #EDEEF0;
-  }
-  .search_result_song_song_name{
-    font-size: 15px;
-    color: #000000;
-    /* letter-spacing: 2rpx; */
-    margin-bottom: 15rpx;
-  }
-  .search_result_song_song_art-album{
-    font-size: 11px;
-    color: #000000;
-    font-weight:lighter;
-    margin-bottom: 5rpx;
-  }
+}
+.songs .item {
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+}
+.songs .num {
+    padding-right: 40rpx;
+}
+.songs .name {
+    display: block;
+}
+.songs .info {
+    display: block;
+    color: #666;
+    font-size: 28rpx;
+}
+.playlist .list {
+    overflow: hidden;
+}
+.playlist .item {
+    float: left;
+    width: 48%;
+    margin: 0 1% 10rpx;
+}
+.playlist image {
+    width: 100%;
+    height: 320rpx;
+}
+.playlist .info {
+    overflow: hidden;
+    height: 60rpx;
+    padding: 4rpx;
+    line-height: 30rpx;
+    font-size: 28rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

@@ -11,7 +11,7 @@
                     <block wx:for="{{comment.hotComments}}" wx:key="commentId">
                         <view class="item">
                             <view class="pic">
-                                <image src="{{item.user.avatarUrl}}" lazy-load />
+                                <image src="{{item.user.avatarUrl}}?param=60y60" lazy-load />
                             </view>
                             <view class="intro">
                                 <view class="top">
@@ -46,7 +46,7 @@
                 <block wx:for="{{comment.comments}}" wx:key="commentId">
                     <view class="item">
                         <view class="pic">
-                            <image src="{{item.user.avatarUrl}}" lazy-load />
+                            <image src="{{item.user.avatarUrl}}?param=60y60" lazy-load />
                         </view>
                         <view class="intro">
                             <view class="top">

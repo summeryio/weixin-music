@@ -2,62 +2,90 @@
 
 
 <view id="search">
-    <navBar title='搜索' background='#DC4238' color='#fff' iconTheme='white' back="{{true}}" bindback="handlerGobackClick"></navBar>
-
-    <view class="searchPage">
-        <view class="page__bd">
-            <view class="weui-search-bar">
-                <view class="weui-search-bar__form">
-                    <view class="weui-search-bar__box">
-                        <icon class="weui-icon-search_in-box" type="search" size="14" color='#EDA8A3' ></icon>
-                        <input focus='true' type="text" class="weui-search-bar__input" 
-                            placeholder="请输入歌手或歌曲名" placeholder-style="color:#EDA8A3" 
-                            value='{{input1Value}}' bindinput="getsearchKey" bindblur="routeSearchResPage" bindconfirm="searchover" />
-                        <!-- 点击×可以清空正在输入 -->
-                        <view class="weui-icon-clear">
-                            <icon type="clear" size="14" color='#EDA8A3' bindtap="clearInput"></icon>
-                        </view>
-                    </view>
-                </view>
-                <view class="weui-search-bar__cancel-btn {{isCancel?'':'hide'}}" bindtap="cancel">取消</view>
-            </view>
-        </view>
-    
-        <!-- 热门搜索 -->
-        <view  class="{{showView?'hot_keys':'header_view_hide'}}">
-            <view class="title">热门搜索</view>
-            <view class='hot_key_box'>
-                <view wx:for="{{hotsongs}}" wx:key="">
-                    <view class='hot_keys_box_item' data-value='{{item.first}}' bindtap='fill_value'>{{item.first}}</view>
-                </view>
-            </view>
-        </view>
-
-        <!-- 搜索历史 -->
-        <view  class="{{showView?'option':'header_view_hide'}}">
-            <text class="title history">搜索历史</text>
-            <icon type='clear' bindtap="clearHistory" class="title record" color="#DE655C" ></icon>
-            <view class="hot_key_box">
-                <text class="hot_keys_box_item" wx:for="{{history}}" wx:key="" data-value='{{item}}' data-index="{{index}}" bindtap="fill_value">{{item}}</text>
-            </view>
-        </view>
-      
-        <!-- 搜索建议 -->
-        <view class="{{showsongresult?'search_suggest':'header_view_hide'}}">
-                <text wx:for="{{searchsuggest}}" wx:key="" class='search_result' data-value='{{item.keyword}}' bindtap='fill_value' >{{item.keyword}}</text>
-        </view>
-    
-    
-        <!-- 搜索结果 -->
-        <view class='search_result_songs'>
-        
-            <view wx:for="{{searchresult}}" wx:key="" class='search_result_song_item' data-id="{{item.id}}" bindtap='handlePlayAudio'>
-            <view class='search_result_song_song_name'>{{item.name}}</view>
-            <view class='search_result_song_song_art-album'>{{item.artists[0].name}} - {{item.album.name}}</view>
-            </view>
-        
+    <navBar title='music' background='#fff' back="{{true}}" bindback="handlerGobackClick"></navBar>
+    <view class="search-box">
+        <view class="inner">
+            <icon class="iconfont icon-search"></icon>
+            <input focus='true' type="text" class="inp" placeholder="请输入歌手或歌曲名" value="{{inputValue}}"
+                bindinput="getInputKey"
+            />
+            <icon class="iconfont icon-close"></icon>
         </view>
     </view>
 
+    <block wx:if="{{!showResult}}">
+        <view class="{{showSuggest ? 'hide' : 'hot-search'}}">
+            <view class="title">
+                <text>热门搜索</text>
+                <icon class="iconfont icon-del"></icon>
+            </view>
+            <view class="list">
+                <block wx:for="{{hotKeys}}" wx:key="index">
+                    <text data-value='{{item.first}}' bindtap="handleSearch">{{item.first}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="{{showSuggest ? 'suggest-list' : 'hide'}}">
+            <view class="title">
+                <text>搜索"{{inputValue}}"</text>
+            </view>
+            <view class="list">
+                <block wx:for="{{suggestList}}" wx:key="index">
+                    <view class="item">
+                        <icon class="iconfont icon-search"></icon>
+                        <text><text class="high"></text> {{item.keyword}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+
+    <block wx:else>
+        <view class="search-result">
+            <view class="{{result.artists || 'hide' }} article">
+                <view class="title">
+                    <text>歌手</text>
+                </view>
+                <view class="cont">
+                    <navigator url="" wx:for="{{result.artists}}" wx:key="id">
+                        <!-- <image src="{{item.picUrl}}?param=670y300" /> -->
+                        <image src="{{item.picUrl}}?param=400y400" />
+                        <text class="name">{{item.name}}</text>
+                    </navigator>
+                </view>
+            </view>
+
+            <view class="songs" wx:if="{{result.songs}}">
+                <view class="title">
+                    <text>单曲</text>
+                </view>
+                <view class="list">
+                    <block wx:for="{{result.songs}}" wx:key="id">
+                        <navigator class="item" url="/pages/song-detail/song-detail?id={{item.id}}">
+                            <view class="num">{{index + 1}}</view>
+                            <view class="intro">
+                                <text class="name">{{item.name}}</text>
+                                <text class="info">{{item.artists[0].name}} · {{item.album.alia[0]}}</text>
+                            </view>
+                        </navigator>
+                    </block>
+                </view>
+            </view>
+            
+            <view class="playlist" wx:if="{{result.playlists}}">
+                <view class="title">
+                    <text>歌单</text>
+                </view>
+                <view class="list">
+                    <block wx:for="{{result.playlists}}" wx:key="id">
+                        <navigator class="item" url="/pages/playlist-detail/playlist-detail?id={{item.id}}">
+                            <image src="{{item.coverImgUrl}}?param=400y400" class="img" />
+                            <text class="info">{{item.name}}</text>
+                        </navigator>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </block>
+    
 </view>
-        

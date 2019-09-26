@@ -16,7 +16,6 @@
                     <image src="{{playlist.creator.avatarUrl + '?param=100y100'}}" />
                     <text class="name">{{playlist.creator.nickname}}</text>
                 </view>
-                
                 <text>创建时间：{{playlist.createTime ? tools.formatDateYMD(playlist.createTime) : ''}}</text>
             </view>
         </view>

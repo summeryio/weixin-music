@@ -32,12 +32,15 @@
     display: flex;
     align-items: center;
 }
-.header .pic {}
+.header .pic {
+    width: 40%;
+}
 .header .pic image {
     width: 284rpx;
     height: 284rpx;
 }
 .header .info {
+    width: 60%;
     margin-left: 20rpx;
 }
 .header .info text {
@@ -64,5 +67,6 @@
     display: inline-block;
     width:  60rpx;
     height: 60rpx;
+    margin-right: 10rpx;
     border-radius: 100%;
 }
