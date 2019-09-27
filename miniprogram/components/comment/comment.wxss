@@ -1,3 +1,5 @@
+@import '/app.wxss';
+
 .m-comment .t {
     padding: 0 10rpx;
     height: 48rpx;
@@ -16,7 +18,7 @@
             align-items: center;
     -webkit-box-align: start;
             align-items: flex-start;
-    padding-top: 10rpx; 
+    padding-top: 10rpx;
 }
   
 .m-comment .pic {

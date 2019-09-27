@@ -5,12 +5,18 @@ const app = getApp()
 Page({
     data: {
         hotKeys: [],
-        searchKey: '',
         showSuggest: false,
         showResult: false,
         suggestList: [],
         inputValue: '',
-        result: null
+        result: null,
+        history: null
+    },
+
+    onShow: function () {
+        this.setData({
+            history: wx.getStorageSync('history') || null
+        })
     },
 
     onLoad: function () {
@@ -21,7 +27,7 @@ Page({
         app.navigationBack()
     },
 
-    getHotKey: function () { // 热门搜索
+    getHotKey: function () { // 热门搜索标签
         get('/search/hot').then(res => {
             this.setData({
                 hotKeys: res.data.result.hots
@@ -34,7 +40,9 @@ Page({
         
         if (e.detail.cursor !== _self.data.cursor) {
             this.setData({
-                inputValue: e.detail.value
+                inputValue: e.detail.value,
+                showSuggest: true,
+                showResult: false,
             })
         }
 
@@ -52,13 +60,17 @@ Page({
         }
     },
 
-    clearInput: function () {
+    clearInput: function () { // 清空输入框
         this.setData({
             inputValue: '',
             showSuggest: false,
             showResult: false,
             result: null
         })
+    },
+
+    searchByKeyborad: function () {
+
     },
     
     getSuggest: function () { // 搜索输入反馈
@@ -71,20 +83,45 @@ Page({
 
     handleSearch: function (e) {
         let val = e.currentTarget.dataset.value
+
+        if (val === '') return
         
         this.setData({
             inputValue: val,
             showResult: true
         })
 
-        this.doSearch()
-    },
-
-    doSearch: function () {
         get(`/search/suggest?keywords=${this.data.inputValue}`).then(res => {
             this.setData({
                 result: res.data.result
             })
         })
+
+        // 添加搜索记录
+        let history = wx.getStorageSync('history') || []
+
+        history.unshift(val)
+
+        history = history.filter((item, i) => {
+            return history.indexOf(item) === i
+        })
+
+        if (history.length > 6) {
+            history.pop()
+        }
+
+        wx.setStorageSync('history', history)
+
+        this.setData({
+            history
+        })
+    },
+
+    clearHistory: function () {
+        this.setData({
+            history: null
+        })
+        
+        wx.setStorageSync("history", null)
     }
 })

@@ -4,7 +4,7 @@
 <skeleton wx:if="{{showSkeleton}}"></skeleton>
 
 <view id="index" class="skeleton">
-    <navBar background='#fff' searchBar="{{true}}" bindsearch='handleSearch' />
+    <navBar background='#fff' searchBar="{{true}}" bindsearch='handleSearch' searchText="搜索音乐/歌单/歌手" />
 
     <swiper
         class="banner skeleton-rect"
